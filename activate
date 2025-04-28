@@ -1,0 +1,30 @@
+#!/bin/bash
+# Activate the python environment
+# Run this script with: `source apes-pyenv/activate`
+
+### from: https://stackoverflow.com/a/179231
+pushd . > '/dev/null'
+SCRIPT_PATH="${BASH_SOURCE[0]:-$0}"
+
+while [ -h "$SCRIPT_PATH" ];
+do
+    cd "$(dirname -- "$SCRIPT_PATH")"
+    SCRIPT_PATH="$(readlink -f -- "$SCRIPT_PATH")"
+done
+
+cd "$(dirname -- "$SCRIPT_PATH")" > '/dev/null'
+SCRIPT_PATH="$(pwd)"
+popd  > '/dev/null'
+###
+
+if [ -f $SCRIPT_PATH/venv/bin/activate ]; then
+    source $SCRIPT_PATH/venv/bin/activate
+else
+    python -m venv $SCRIPT_PATH/venv
+    source $SCRIPT_PATH/venv/bin/activate
+
+    # created by `pip freeze > requirements.txt`
+    pip install -r $SCRIPT_PATH/requirements.txt
+fi
+
+unset SCRIPT_PATH
