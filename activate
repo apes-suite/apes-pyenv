@@ -20,7 +20,7 @@ popd  > '/dev/null'
 if [ -f $SCRIPT_PATH/venv/bin/activate ]; then
     source $SCRIPT_PATH/venv/bin/activate
 else
-    python -m venv $SCRIPT_PATH/venv
+    python3 -m venv $SCRIPT_PATH/venv
     source $SCRIPT_PATH/venv/bin/activate
 
     # created by `pip freeze > requirements.txt`
