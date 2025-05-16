@@ -13,6 +13,7 @@ RUN apt update && apt upgrade -y && \
       git \
       libfftw3-dev \
       openmpi-bin openmpi-common libopenmpi-dev \
+      pkg-config \
       python3-dev \
       python3-full \
       python3-pip
