@@ -1,4 +1,5 @@
-FROM ubuntu:latest
+ARG UBUNTU_VERSION=latest
+FROM ubuntu:${UBUNTU_VERSION}
 
 SHELL ["/bin/bash", "-c"]
 
