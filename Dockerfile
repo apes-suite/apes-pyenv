@@ -15,7 +15,7 @@ RUN apt update && apt upgrade -y && \
       gfortran \
       openmpi-bin openmpi-common libopenmpi-dev \
       python3-dev \
-      python3-pip \
+      python3-pip
 
 RUN pip install --no-cache-dir -r requirements.txt
 
