@@ -12,6 +12,7 @@ RUN apt update && apt upgrade -y && \
       fftw-dev \
       gcc \
       gfortran \
+      git \
       openmpi-bin openmpi-common libopenmpi-dev \
       python3-dev \
       python3-full \
