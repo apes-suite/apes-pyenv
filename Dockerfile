@@ -4,8 +4,6 @@ SHELL ["/bin/bash", "-c"]
 
 ENV BASH_ENV=/etc/profile
 
-COPY requirements.txt ./
-
 RUN apt update && apt upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt install -y \
       build-essential \
@@ -20,8 +18,11 @@ RUN apt update && apt upgrade -y && \
 
 RUN useradd apes
 USER apes
-WORKDIR /home/apes
+ENV APES_HOME=/home/apes
+WORKDIR $APES_HOME
 COPY requirements.txt ./
-RUN python3 -m venv --system-site-packages venv
-RUN source venv/bin/activate
-RUN venv/bin/pip install -r requirements.txt
+ENV VIRTUAL_ENV=$APES_HOME/venv
+RUN python3 -m venv --system-site-packages $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+RUN $VIRTUAL_ENV/bin/pip install -r requirements.txt
+CMD ["/bin/bash", "-i"]
