@@ -17,8 +17,6 @@ RUN apt update && apt upgrade -y && \
       python3-full \
       python3-pip
 
-RUN pip install --no-cache-dir -r requirements.txt
-
 RUN useradd apes
 USER apes
 WORKDIR /home/apes
