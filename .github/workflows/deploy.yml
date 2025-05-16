@@ -13,6 +13,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
+  UBUNTU: ${{ inputs.UbuntuVersion || vars.UBUNTU_VERSION }}
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
@@ -40,6 +41,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804
         with:
+          flavor: suffix=-u${{ env.UBUNTU }}
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker image
@@ -49,7 +51,7 @@ jobs:
           context: .
           push: true
           no-cache: true
-          build-args: UBUNTU_VERSION=${{ inputs.UbuntuVersion || vars.UBUNTU_VERSION }}
+          build-args: UBUNTU_VERSION=${{ UBUNTU }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
