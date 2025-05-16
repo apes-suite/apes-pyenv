@@ -51,7 +51,7 @@ jobs:
           context: .
           push: true
           no-cache: true
-          build-args: UBUNTU_VERSION=${{ UBUNTU }}
+          build-args: UBUNTU_VERSION=${{ env.UBUNTU }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
