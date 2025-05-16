@@ -2,6 +2,11 @@ name: Create and publish a Docker image
 
 on:
   workflow_dispatch:
+    inputs:
+      UbuntuVersion:
+        description: "Ubuntu Version"
+        default: "24.04"
+        required: true
   push:
     tags:
       - 'v[0-9]+.[0-9]+'
@@ -44,7 +49,7 @@ jobs:
           context: .
           push: true
           no-cache: true
-          build-args: UBUNTU_VERSION=${{ vars.UBUNTU_VERSION }}
+          build-args: UBUNTU_VERSION=${{ inputs.UbuntuVersion || vars.UBUNTU_VERSION }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
