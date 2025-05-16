@@ -18,7 +18,6 @@ jobs:
       contents: read
       packages: write
       attestations: write
-      id_token: write
 
     steps:
       - name: Checkout repository
