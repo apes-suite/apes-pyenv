@@ -8,10 +8,10 @@ ENV BASH_ENV=/etc/profile
 RUN apt update && apt upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt install -y \
       build-essential \
-      fftw-dev \
       gcc \
       gfortran \
       git \
+      libfftw3-dev \
       openmpi-bin openmpi-common libopenmpi-dev \
       python3-dev \
       python3-full \
