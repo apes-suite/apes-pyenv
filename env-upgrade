@@ -1,0 +1,2 @@
+#!/bin/bash
+pip install -U peon-apes gleaner ford apes-shepherd pysys
