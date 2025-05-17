@@ -5,6 +5,8 @@ virtual environment for the Python tools that are useful in development
 and usage of the APES software.
 
 Run `source apes-pyenv/activate` to activate this Python environment.
+While in the active environment, you can check the current version
+information with `env-version`.
 
 Then you can also install the APES applications into the environment
 with:

@@ -22,6 +22,9 @@ if [ -f $SCRIPT_PATH/venv/bin/activate ]; then
 else
     python3 -m venv $SCRIPT_PATH/venv
     source $SCRIPT_PATH/venv/bin/activate
+    cp $SCRIPT_PATH/helper/env-freeze $SCRIPT_PATH/venv/bin
+    cp $SCRIPT_PATH/helper/env-version $SCRIPT_PATH/venv/bin
+    chmod +x $SCRIPT_PATH/venv/bin/env-freeze $SCRIPT_PATH/venv/bin/env-version
 
     # created by `pip freeze > requirements.txt`
     pip install -r $SCRIPT_PATH/requirements.txt

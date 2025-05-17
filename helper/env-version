@@ -1,0 +1,11 @@
+#!/bin/bash
+# Little helper script to show version information
+# on the current environment.
+ENV_RELEASE=$(cd $VIRTUAL_ENV/.. && git tag --points-at HEAD)
+ENV_HASH=$(cd $VIRTUAL_ENV/.. && git rev-parse HEAD)
+echo "APES Pyenv"
+if [ -n "$ENV_RELEASE" ]; then
+  echo "     Release $ENV_RELEASE"
+fi
+echo "     commit: $ENV_HASH"
+env-freeze
