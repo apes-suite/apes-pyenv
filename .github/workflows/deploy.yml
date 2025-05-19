@@ -2,18 +2,12 @@ name: Create and publish a Docker image
 
 on:
   workflow_dispatch:
-    inputs:
-      UbuntuVersion:
-        description: "Ubuntu Version"
-        default: "24.04"
-        required: true
   push:
     tags:
       - 'v[0-9]+.[0-9]+'
 
 env:
   REGISTRY: ghcr.io
-  UBUNTU: ${{ inputs.UbuntuVersion || vars.UBUNTU_VERSION }}
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
@@ -41,8 +35,12 @@ jobs:
         id: meta
         uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804
         with:
-          flavor: suffix=-u${{ env.UBUNTU }}
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=schedule
+            type=ref,event=branch
+            type=match,pattern=v(\d.\d),group=1
+            type=ref,event=pr
 
       - name: Build and push Docker image
         id: push
@@ -51,7 +49,6 @@ jobs:
           context: .
           push: true
           no-cache: true
-          build-args: UBUNTU_VERSION=${{ env.UBUNTU }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
