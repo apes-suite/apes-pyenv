@@ -22,6 +22,7 @@ RUN apt update && apt upgrade -y && \
       python3-full \
       python3-pip
 
+COPY requirements.txt /tmp/
 RUN python3 -m venv --system-site-packages $VIRTUAL_ENV && \
-    $VIRTUAL_ENV/bin/pip install -r requirements.txt
+    $VIRTUAL_ENV/bin/pip install -r /tmp/requirements.txt && rm /tmp/requirements.txt
 COPY helper/env-freeze $VIRTUAL_ENV/bin/
