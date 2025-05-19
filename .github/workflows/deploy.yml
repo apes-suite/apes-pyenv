@@ -39,7 +39,7 @@ jobs:
           tags: |
             type=schedule
             type=ref,event=branch
-            type=match,pattern=v(\d.\d),group=1
+            type=match,pattern=v(\d+\.\d+),group=1
             type=ref,event=pr
 
       - name: Build and push Docker image
