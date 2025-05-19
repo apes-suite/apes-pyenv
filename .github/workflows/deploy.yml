@@ -49,6 +49,7 @@ jobs:
           context: .
           push: true
           no-cache: true
+          build-args: ENV_VERSION=${{ steps.meta.outputs.version }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
