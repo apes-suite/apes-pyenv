@@ -1,2 +1,2 @@
 #!/bin/bash
-pip freeze --disable-pip-version-check | grep -Ei 'peon-apes|gleaner|ford|apes-shepherd|pysys'
+$VIRTUAL_ENV/bin/pip freeze --no-cache-dir --disable-pip-version-check | grep -Ei 'peon-apes|gleaner|ford|apes-shepherd|pysys'
