@@ -6,6 +6,7 @@ ARG ENV_VERSION
 ENV ENV_VERSION=${ENV_VERSION}
 ENV BASH_ENV=/etc/profile
 ENV VIRTUAL_ENV=/opt/apes/venv
+ENV PIP_DOWNLOAD_CACHE=${VIRTUAL_ENV}/.pip/cache
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 ENV FC=mpif90
 
@@ -20,7 +21,9 @@ RUN apt update && apt upgrade -y && \
       pkg-config \
       python3-dev \
       python3-full \
-      python3-pip
+      python3-pip \
+      util-linux && \
+    useradd apes
 
 COPY requirements.txt /tmp/
 RUN python3 -m venv --system-site-packages $VIRTUAL_ENV && \
