@@ -1,2 +1,2 @@
 #!/bin/bash
-pip freeze --require-virtualenv --disable-pip-version-check | grep -Ei 'peon-apes|gleaner|ford|apes-shepherd|pysys'
+pip freeze --disable-pip-version-check | grep -Ei 'peon-apes|gleaner|ford|apes-shepherd|pysys'

@@ -7,7 +7,7 @@ ENV ENV_VERSION=${ENV_VERSION}
 ENV BASH_ENV=/etc/profile
 ENV VIRTUAL_ENV=/opt/apes/venv
 ENV PIP_DOWNLOAD_CACHE=${VIRTUAL_ENV}/.pip/cache
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV PIP_REQUIRE_VIRTUALENV=true
 ENV FC=mpif90
 
 RUN apt update && apt upgrade -y && \
@@ -27,5 +27,6 @@ RUN apt update && apt upgrade -y && \
 
 COPY requirements.txt /tmp/
 RUN python3 -m venv --system-site-packages $VIRTUAL_ENV && \
+    source $VIRTUAL_ENV/bin/activate && \
     $VIRTUAL_ENV/bin/pip install -r /tmp/requirements.txt && rm /tmp/requirements.txt
 COPY helper/env-freeze $VIRTUAL_ENV/bin/
