@@ -20,7 +20,7 @@ numpy==2.0.2
 packaging==25.0
 pcpp==1.30
 peon-apes @ git+https://github.com/apes-suite/peon-apes.git@63cc1b49cfdf9cbe75b879dd6bda434990d510c7
-pillow==11.2.1
+pillow==11.3.0
 Pygments==2.18.0
 pyparsing==3.2.3
 pyratemp==0.3.2
