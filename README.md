@@ -53,3 +53,13 @@ git clone --recurse-submodules git@github.com:apes-suite/musubi.git
 cd musubi
 FC=mpif90 bin/waf configure install --targets=musubi,mus_harvesting --prefix=$VIRTUAL_ENV
 ```
+
+## Development of the python packages themselves
+
+For the development of the python packages you may want to make use
+of [editable pip installs](https://pip.pypa.io/en/stable/topics/local-project-installs/#editable-installs)
+like this:
+
+```
+python -m pip install --force-reinstall -e local/repo
+```
