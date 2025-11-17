@@ -20,7 +20,7 @@ mdurl==0.1.2
 numpy==2.0.2
 packaging==25.0
 pcpp==1.30
-peon-apes @ git+https://github.com/apes-suite/peon-apes.git@b169fde540a411cbbb20ba3a55a61317577e50aa
+peon-apes @ git+https://github.com/apes-suite/peon-apes.git@b575eb4ede2f2e5268b47912a79549e5d84daa69
 pillow==11.3.0
 Pygments==2.18.0
 pyparsing==3.2.3
