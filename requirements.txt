@@ -4,7 +4,7 @@ contourpy==1.3.0
 cycler==0.12.1
 fonttools==4.61.0
 FORD==7.0.12
-gleaner @ git+https://github.com/apes-suite/gleaner.git@032df13158be2e924a37a9146d16a46a5adcd574
+gleaner @ git+https://github.com/apes-suite/gleaner.git@61e1887739dc2c01c7ed50adb34abda6ab5d0b3b
 graphviz==0.20.3
 importlib_metadata==8.7.0
 importlib_resources==6.5.2
@@ -19,6 +19,7 @@ matplotlib==3.9.4
 mdurl==0.1.2
 numpy==2.0.2
 packaging==25.0
+pandas==3.0.2
 pcpp==1.30
 peon-apes @ git+https://github.com/apes-suite/peon-apes.git@b575eb4ede2f2e5268b47912a79549e5d84daa69
 pillow==12.1.1
