@@ -24,7 +24,8 @@ else
     source $SCRIPT_PATH/venv/bin/activate
     cp $SCRIPT_PATH/helper/env-freeze $SCRIPT_PATH/venv/bin
     cp $SCRIPT_PATH/helper/env-version $SCRIPT_PATH/venv/bin
-    chmod +x $SCRIPT_PATH/venv/bin/env-freeze $SCRIPT_PATH/venv/bin/env-version
+    cp $SCRIPT_PATH/helper/env-upgrade $SCRIPT_PATH/venv/bin
+    chmod +x $SCRIPT_PATH/venv/bin/env-freeze $SCRIPT_PATH/venv/bin/env-version $SCRIPT_PATH/venv/bin/env-upgrade
 
     # created by `pip freeze > requirements.txt`
     pip install -r $SCRIPT_PATH/requirements.txt
