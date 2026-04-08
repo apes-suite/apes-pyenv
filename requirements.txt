@@ -19,6 +19,7 @@ matplotlib==3.9.4
 mdurl==0.1.2
 numpy==2.0.2
 packaging==25.0
+pandas==3.0.2
 pcpp==1.30
 peon-apes @ git+https://github.com/apes-suite/peon-apes.git@b575eb4ede2f2e5268b47912a79549e5d84daa69
 pillow==12.1.1
