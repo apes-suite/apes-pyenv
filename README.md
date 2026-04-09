@@ -63,3 +63,7 @@ like this:
 ```
 python -m pip install --force-reinstall -e local/repo
 ```
+
+## Upgrading the packages
+
+To upgrade the packages within the venv, run `env-upgrade`.
