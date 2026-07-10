@@ -31,7 +31,7 @@ python-dateutil==2.9.0.post0
 python-markdown-math==0.9
 rich==14.0.0
 six==1.17.0
-soupsieve==2.7
+soupsieve==2.8.4
 tomli==2.2.1
 toposort==1.7
 tqdm==4.67.1
